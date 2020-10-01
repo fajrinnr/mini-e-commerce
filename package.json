@@ -1,0 +1,33 @@
+{
+  "name": "nextjs-blog",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.31",
+    "@fortawesome/free-brands-svg-icons": "^5.15.0",
+    "@fortawesome/free-regular-svg-icons": "^5.15.0",
+    "@fortawesome/free-solid-svg-icons": "^5.15.0",
+    "@fortawesome/react-fontawesome": "^0.1.11",
+    "next": "9.5.3",
+    "next-cookies": "^2.0.3",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "react-facebook-login": "^4.1.1",
+    "react-google-login": "^5.1.21",
+    "react-redux": "^7.2.1",
+    "react-router-dom": "^5.2.0",
+    "react-share": "^4.3.0",
+    "redux": "^4.0.5",
+    "sass": "^1.26.11",
+    "sweetalert2": "^10.3.5"
+  },
+  "devDependencies": {
+    "@types/react": "^16.9.49",
+    "typescript": "^4.0.3"
+  }
+}
