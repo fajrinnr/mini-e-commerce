@@ -1,0 +1,35 @@
+@mixin getContainerStyle($flex-direction, $justify-content)
+  border-width: 2px
+  border-radius: 5px
+  width: 100%
+  background-color: white
+  box-shadow: 5px 5px 8px #E8EBED,-5px -5px 8px #E8EBED
+  display: flex
+  flex-direction: $flex-direction
+  align-items: center
+  justify-content: $justify-content
+
+.container
+  cursor: pointer
+  margin-bottom: 20px
+  padding: 10px
+  @include getContainerStyle($flex-direction: column, $justify-content: center)
+  img
+    width: 100%
+    height: 150px
+    object-fit: scale-down
+  p
+    font-size: 20px
+    font-family: MULI-BOLD
+    text-align: center
+
+.containerSmallCard
+  margin-bottom: 20px
+  @include getContainerStyle($flex-direction: row, $justify-content: flex-start)
+  .imgSmallCard
+    width: 150px
+    padding: 10px
+    img
+      object-fit: scale-down
+      height: 100px
+      width: 130px
