@@ -9,8 +9,8 @@ git clone https://github.com/fajrinnr/mini-e-commerce.git
 cd mini-e-commerce
 npm install
 
-change next.config.js.template -> next.config.js
-fill the requirements needed in next.config.js
+rename file .env.template -> .env
+fill the requirements needed in .env
 
 npm run dev
 ```

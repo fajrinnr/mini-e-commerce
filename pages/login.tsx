@@ -12,8 +12,14 @@ import { faFacebook, faGoogle } from "@fortawesome/free-brands-svg-icons";
 import { useRouter } from "next/router";
 import { route } from "../src/helpers/route";
 import { useCurrentURL } from "../src/hooks/route";
+import { GetServerSideProps } from "next";
 
-export default function LoginPage() {
+interface ILoginPageProps {
+  googleClientId: string;
+  facebookAppId: string;
+}
+
+export default function LoginPage(props: ILoginPageProps) {
   const currentURL = useCurrentURL();
   const [showPassword, setShowPassword] = useState<boolean>(false);
   const router = useRouter();
@@ -73,7 +79,7 @@ export default function LoginPage() {
             </div>
           </form>
           <FacebookLogin
-            appId={process.env.FACEBOOK_APP_ID}
+            appId={props.facebookAppId}
             fields="name,email,picture"
             callback={(res: ReactFacebookLoginInfo) => {
               localStorage.setItem("_TU", res.accessToken);
@@ -107,7 +113,7 @@ export default function LoginPage() {
             )}
           />
           <GoogleLogin
-            clientId={process.env.GOOGLE_CLIENT_ID}
+            clientId={props.googleClientId}
             render={(renderProps) => (
               <div
                 onMouseDown={renderProps.onClick}
@@ -142,3 +148,14 @@ export default function LoginPage() {
     </MainLayout>
   );
 }
+
+export const getServerSideProps: GetServerSideProps<ILoginPageProps> = async (
+  ctx
+) => {
+  // Fetch data from external API
+  const googleClientId = process.env.GOOGLE_CLIENT_ID;
+  const facebookAppId = process.env.FACEBOOK_APP_ID;
+
+  // Pass data to the page via props
+  return { props: { googleClientId, facebookAppId } };
+};
