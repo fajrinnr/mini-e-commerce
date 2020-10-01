@@ -23,8 +23,6 @@ interface IProducts {
   title: string;
 }
 
-export const config = { amp: "hybrid" };
-
 export default function ProductDetailPage() {
   const currentURL = useCurrentURL();
   const router = useRouter();

@@ -29,8 +29,6 @@ import { setStatuModal } from "../redux/actions/modalActions";
 import { useEffect, useRef, useState } from "react";
 import { useCurrentURL } from "../src/hooks/route";
 
-export const config = { amp: "hybrid" };
-
 export default function ProductDetailPage() {
   const currentURL = useCurrentURL();
   const dispatch = useDispatch();

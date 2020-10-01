@@ -13,8 +13,6 @@ import { useRouter } from "next/router";
 import { route } from "../src/helpers/route";
 import { useCurrentURL } from "../src/hooks/route";
 
-export const config = { amp: "hybrid" };
-
 export default function LoginPage() {
   const currentURL = useCurrentURL();
   const [showPassword, setShowPassword] = useState<boolean>(false);
@@ -31,7 +29,13 @@ export default function LoginPage() {
       <div className={styles.container}>
         <div className={styles.content}>
           <h1>LOGIN </h1>
-          <form>
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              localStorage.setItem("_TU", "loginManually");
+              router.push("/", undefined, { shallow: true });
+            }}
+          >
             <label htmlFor="username">USERNAME</label>
             <input
               className={`inputBox`}
