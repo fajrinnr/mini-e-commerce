@@ -2,6 +2,8 @@
 
 Hi! I'm Fajrin Noor Rachman, in this project i create some mini e-commerce with no database, just using Redux as State Management, you can clone my project with this tricks:
 
+## Link Deploy: https://mini-e-commerce.vercel.app/login
+
 ```
 git clone https://github.com/fajrinnr/mini-e-commerce.git
 cd mini-e-commerce
